@@ -8,99 +8,9 @@
 شامل مدیریت سفارشات، ارسال، و احراز هویت فروشندگان است.
 
 
-
-
-```mermaid
-flowchart TD
-    START([شروع]) --> INITIAL
-
-    INITIAL[\"1️⃣ INITIAL\\nسفارش ایجاد شد\"]
-    STARTED[\"2️⃣ STARTED\\nمشتری به BWDK هدایت شد\"]
-    PENDING[\"3️⃣ PENDING\\nمشتری وارد شد و سفارش در انتظار پرداخت\"]
-    WAITING_FOR_GATEWAY[\"4️⃣ WAITING_FOR_GATEWAY\\nمشتری به درگاه پرداخت هدایت شد\"]
-    PAID_BY_USER[\"7️⃣ PAID_BY_USER\\nپرداخت موفق\"]
-    VERIFIED_BY_MERCHANT[\"9️⃣ VERIFIED_BY_MERCHANT\\nتأیید شده توسط فروشنده\"]
-    SHIPPED[\"🚚 SHIPPED\\nارسال شد\"]
-    DELIVERED[\"✅ DELIVERED\\nتحویل داده شد\"]
-
-    EXPIRED[\"⏰ EXPIRED\\nمنقضی شد\"]
-    EXPIRATION_TIME_EXCEEDED[\"⏱️ EXPIRATION_TIME_EXCEEDED\\nزمان انقضا گذشت\"]
-    CANCELLED[\"❌ CANCELLED\\nلغو توسط مشتری\"]
-    FAILED_TO_PAY[\"💳 FAILED_TO_PAY\\nپرداخت ناموفق\"]
-    FAILED_TO_VERIFY_BY_MERCHANT[\"🔴 FAILED_TO_VERIFY_BY_MERCHANT\\nتأیید مرچنت ناموفق\"]
-    FAILED_BY_MERCHANT[\"🔴 FAILED_BY_MERCHANT\\nخطا از سمت مرچنت\"]
-    CANCELLED_BY_MERCHANT[\"🔴 CANCELLED_BY_MERCHANT\\nلغو توسط مرچنت\"]
-
-    R_CUSTOMER_REQUEST[\"1️⃣3️⃣ REQUEST_TO_REFUND\\nدرخواست استرداد توسط مشتری\"]
-    R_FAILED_VERIFY[\"1️⃣4️⃣ REQUEST_TO_REFUND\\nاسترداد پس از تأیید ناموفق مرچنت\"]
-    R_FAILED_MERCHANT[\"1️⃣5️⃣ REQUEST_TO_REFUND\\nاسترداد پس از خطای مرچنت\"]
-    R_CANCELLED_MERCHANT[\"1️⃣6️⃣ REQUEST_TO_REFUND\\nاسترداد پس از لغو مرچنت\"]
-    REFUND_COMPLETED[\"✅ REFUND_COMPLETED\\nاسترداد تکمیل شد\"]
-
-    INITIAL -->|\"مرچنت سفارش ایجاد کرد\"| STARTED
-    STARTED -->|\"مشتری وارد سیستم شد\"| PENDING
-    PENDING -->|\"مشتری سفارش را نهایی و ثبت کرد\"| WAITING_FOR_GATEWAY
-    WAITING_FOR_GATEWAY -->|\"پرداخت با موفقیت انجام شد\"| PAID_BY_USER
-    PAID_BY_USER -->|\"مرچنت سفارش را تأیید کرد\"| VERIFIED_BY_MERCHANT
-    VERIFIED_BY_MERCHANT -->|\"مرچنت وضعیت را به ارسال تغییر داد\"| SHIPPED
-    SHIPPED -->|\"مرچنت تحویل را تأیید کرد\"| DELIVERED
-
-    INITIAL -->|\"زمان رزرو به پایان رسید\"| EXPIRED
-    STARTED -->|\"زمان رزرو به پایان رسید\"| EXPIRED
-    PENDING -->|\"زمان رزرو به پایان رسید\"| EXPIRED
-    WAITING_FOR_GATEWAY -->|\"زمان رزرو به پایان رسید\"| EXPIRED
-
-    PENDING -->|\"زمان مجاز سفارش سپری شده بود\"| EXPIRATION_TIME_EXCEEDED
-    WAITING_FOR_GATEWAY -->|\"زمان مجاز سفارش سپری شده بود\"| EXPIRATION_TIME_EXCEEDED
-
-    PENDING -->|\"مشتری انصراف داد\"| CANCELLED
-    WAITING_FOR_GATEWAY -->|\"مشتری انصراف داد\"| CANCELLED
-
-    WAITING_FOR_GATEWAY -->|\"پرداخت ناموفق بود\"| FAILED_TO_PAY
-
-    PAID_BY_USER -->|\"مرچنت تأیید را رد کرد\"| FAILED_TO_VERIFY_BY_MERCHANT
-    PAID_BY_USER -->|\"مرچنت اعلام ناتوانی در انجام سفارش کرد\"| FAILED_BY_MERCHANT
-    PAID_BY_USER -->|\"مرچنت سفارش را لغو کرد\"| CANCELLED_BY_MERCHANT
-    VERIFIED_BY_MERCHANT -->|\"مرچنت سفارش را لغو کرد\"| CANCELLED_BY_MERCHANT
-
-    PAID_BY_USER -->|\"مرچنت درخواست استرداد داد\"| R_CUSTOMER_REQUEST
-    VERIFIED_BY_MERCHANT -->|\"مرچنت درخواست استرداد داد\"| R_CUSTOMER_REQUEST
-    FAILED_TO_VERIFY_BY_MERCHANT -->|\"سیستم استرداد را آغاز کرد\"| R_FAILED_VERIFY
-    FAILED_BY_MERCHANT -->|\"سیستم استرداد را آغاز کرد\"| R_FAILED_MERCHANT
-    CANCELLED_BY_MERCHANT -->|\"سیستم استرداد را آغاز کرد\"| R_CANCELLED_MERCHANT
-
-    R_CUSTOMER_REQUEST -->|\"استرداد توسط دیجی‌پی تأیید شد\"| REFUND_COMPLETED
-    R_FAILED_VERIFY -->|\"استرداد توسط دیجی‌پی تأیید شد\"| REFUND_COMPLETED
-    R_FAILED_MERCHANT -->|\"استرداد توسط دیجی‌پی تأیید شد\"| REFUND_COMPLETED
-    R_CANCELLED_MERCHANT -->|\"استرداد توسط دیجی‌پی تأیید شد\"| REFUND_COMPLETED
-
-    style INITIAL fill:#9e9e9e,color:#fff
-    style STARTED fill:#1565c0,color:#fff
-    style PENDING fill:#ef6c00,color:#fff
-    style WAITING_FOR_GATEWAY fill:#6a1b9a,color:#fff
-    style PAID_BY_USER fill:#2e7d32,color:#fff
-    style VERIFIED_BY_MERCHANT fill:#1b5e20,color:#fff
-    style SHIPPED fill:#0277bd,color:#fff
-    style DELIVERED fill:#1b5e20,color:#fff
-    style EXPIRED fill:#b71c1c,color:#fff
-    style EXPIRATION_TIME_EXCEEDED fill:#b71c1c,color:#fff
-    style CANCELLED fill:#7f0000,color:#fff
-    style FAILED_TO_PAY fill:#b71c1c,color:#fff
-    style FAILED_TO_VERIFY_BY_MERCHANT fill:#b71c1c,color:#fff
-    style FAILED_BY_MERCHANT fill:#b71c1c,color:#fff
-    style CANCELLED_BY_MERCHANT fill:#7f0000,color:#fff
-    style R_CUSTOMER_REQUEST fill:#e65100,color:#fff
-    style R_FAILED_VERIFY fill:#e65100,color:#fff
-    style R_FAILED_MERCHANT fill:#e65100,color:#fff
-    style R_CANCELLED_MERCHANT fill:#e65100,color:#fff
-    style REFUND_COMPLETED fill:#2e7d32,color:#fff
-```
-
----
-
 <div dir=\"rtl\" style=\"text-align: right;\">
 
-## توضیح وضعیت‌های سفارش
+<!-- ## توضیح وضعیت‌های سفارش
 
 ### ۱. INITIAL — ایجاد اولیه سفارش
 
@@ -281,7 +191,7 @@ flowchart TD
 **چگونه اتفاق می‌افتد:** Task پردازش استرداد (`process_order_refund`) پس از تأیید موفق بازگشت وجه از سوی Digipay، وضعیت سفارش را به `REFUND_COMPLETED` تغییر می‌دهد.
 
 **وابستگی‌ها:** یکی از وضعیت‌های درخواست استرداد (۱۳، ۱۴، ۱۵ یا ۱۶) باید فعال باشد و Digipay تراکنش استرداد را تأیید کرده باشد.
-
+ -->
 </div>
 
 
@@ -289,7 +199,7 @@ flowchart TD
 This API client was generated by the [OpenAPI Generator](https://openapi-generator.tech) project.  By using the [openapi-spec](https://github.com/OAI/OpenAPI-Specification) from a remote server, you can easily generate an API client.
 
 - API version: 1.0.0
-- Package version: 1.0.2
+- Package version: 1.0.3
 - Generator version: 7.21.0
 - Build package: org.openapitools.codegen.languages.KotlinClientCodegen
 
@@ -328,18 +238,18 @@ All URIs are relative to *https://bwdk-backend.digify.shop*
 
 | Class | Method | HTTP request | Description |
 | ------------ | ------------- | ------------- | ------------- |
-| *DefaultApi* | [**merchantApiV1AuthStatusRetrieve**](docs/DefaultApi.md#merchantapiv1authstatusretrieve) | **GET** /merchant/api/v1/auth/status/ | وضعیت لاگین بودن |
-| *DefaultApi* | [**orderApiV1CreateOrderCreate**](docs/DefaultApi.md#orderapiv1createordercreate) | **POST** /order/api/v1/create-order/ | ساخت سفارش |
-| *DefaultApi* | [**orderApiV1ManagerCancelShipmentCreate**](docs/DefaultApi.md#orderapiv1managercancelshipmentcreate) | **POST** /order/api/v1/manager/{order_uuid}/cancel-shipment/ | لغو ارسال سفارش |
-| *DefaultApi* | [**orderApiV1ManagerChangeShippingMethodUpdate**](docs/DefaultApi.md#orderapiv1managerchangeshippingmethodupdate) | **PUT** /order/api/v1/manager/{order_uuid}/change-shipping-method/ | تغییر روش ارسال |
-| *DefaultApi* | [**orderApiV1ManagerList**](docs/DefaultApi.md#orderapiv1managerlist) | **GET** /order/api/v1/manager/ | لیست سفارشات |
-| *DefaultApi* | [**orderApiV1ManagerPaidList**](docs/DefaultApi.md#orderapiv1managerpaidlist) | **GET** /order/api/v1/manager/paid/ | سفارش پرداخت‌شده و تایید‌نشده |
-| *DefaultApi* | [**orderApiV1ManagerRefundCreate**](docs/DefaultApi.md#orderapiv1managerrefundcreate) | **POST** /order/api/v1/manager/{order_uuid}/refund/ | بازگشت سفارش |
-| *DefaultApi* | [**orderApiV1ManagerRetrieve**](docs/DefaultApi.md#orderapiv1managerretrieve) | **GET** /order/api/v1/manager/{order_uuid}/ | دریافت سفارش |
-| *DefaultApi* | [**orderApiV1ManagerReviveShipmentCreate**](docs/DefaultApi.md#orderapiv1managerreviveshipmentcreate) | **POST** /order/api/v1/manager/{order_uuid}/revive-shipment/ | احیای ارسال سفارش |
-| *DefaultApi* | [**orderApiV1ManagerUpdateStatusUpdate**](docs/DefaultApi.md#orderapiv1managerupdatestatusupdate) | **PUT** /order/api/v1/manager/{order_uuid}/update-status/ | به‌روزرسانی وضعیت سفارش |
-| *DefaultApi* | [**orderApiV1ManagerVerifyCreate**](docs/DefaultApi.md#orderapiv1managerverifycreate) | **POST** /order/api/v1/manager/{order_uuid}/verify/ | تایید سفارش |
-| *DefaultApi* | [**walletsApiV1WalletBalanceRetrieve**](docs/DefaultApi.md#walletsapiv1walletbalanceretrieve) | **GET** /wallets/api/v1/wallet-balance/ | دریافت موجودی کیف پول |
+| *MerchantOrdersApi* | [**orderApiV1CreateOrderCreate**](docs/MerchantOrdersApi.md#orderapiv1createordercreate) | **POST** /order/api/v1/create-order/ | ساخت سفارش |
+| *MerchantOrdersApi* | [**orderApiV1ManagerList**](docs/MerchantOrdersApi.md#orderapiv1managerlist) | **GET** /order/api/v1/manager/ | لیست سفارشات |
+| *MerchantOrdersApi* | [**orderApiV1ManagerPaidList**](docs/MerchantOrdersApi.md#orderapiv1managerpaidlist) | **GET** /order/api/v1/manager/paid/ | سفارش پرداخت‌شده و تایید‌نشده |
+| *MerchantOrdersApi* | [**orderApiV1ManagerRefundCreate**](docs/MerchantOrdersApi.md#orderapiv1managerrefundcreate) | **POST** /order/api/v1/manager/{order_uuid}/refund/ | بازگشت سفارش |
+| *MerchantOrdersApi* | [**orderApiV1ManagerRetrieve**](docs/MerchantOrdersApi.md#orderapiv1managerretrieve) | **GET** /order/api/v1/manager/{order_uuid}/ | دریافت سفارش |
+| *MerchantOrdersApi* | [**orderApiV1ManagerUpdateStatusUpdate**](docs/MerchantOrdersApi.md#orderapiv1managerupdatestatusupdate) | **PUT** /order/api/v1/manager/{order_uuid}/update-status/ | Update Order Status |
+| *MerchantOrdersApi* | [**orderApiV1ManagerVerifyCreate**](docs/MerchantOrdersApi.md#orderapiv1managerverifycreate) | **POST** /order/api/v1/manager/{order_uuid}/verify/ | تایید سفارش |
+| *MerchantWalletApi* | [**walletsApiV1WalletBalanceRetrieve**](docs/MerchantWalletApi.md#walletsapiv1walletbalanceretrieve) | **GET** /wallets/api/v1/wallet-balance/ | Get Wallet Balance |
+| *OrderShippingApi* | [**orderApiV1ManagerCancelShipmentCreate**](docs/OrderShippingApi.md#orderapiv1managercancelshipmentcreate) | **POST** /order/api/v1/manager/{order_uuid}/cancel-shipment/ | Cancel Shipment |
+| *OrderShippingApi* | [**orderApiV1ManagerChangeShippingMethodUpdate**](docs/OrderShippingApi.md#orderapiv1managerchangeshippingmethodupdate) | **PUT** /order/api/v1/manager/{order_uuid}/change-shipping-method/ | Change Shipping Method |
+| *OrderShippingApi* | [**orderApiV1ManagerReviveShipmentCreate**](docs/OrderShippingApi.md#orderapiv1managerreviveshipmentcreate) | **POST** /order/api/v1/manager/{order_uuid}/revive-shipment/ | Revive Shipment |
+| *SellerProfileManagementApi* | [**merchantApiV1AuthStatusRetrieve**](docs/SellerProfileManagementApi.md#merchantapiv1authstatusretrieve) | **GET** /merchant/api/v1/auth/status/ | وضعیت لاگین بودن |
 
 
 <a id="documentation-for-models"></a>

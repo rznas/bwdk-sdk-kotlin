@@ -32,7 +32,7 @@ import com.squareup.moshi.JsonClass
  *
  * @param orderUuid 
  * @param merchantOrderId شناسه منحصر به فرد سفارش در سیستم فروشنده
- * @param merchantUniqueId شناسه منحصر به فرد برای پذیرنده برای تأیید سفارش
+ * @param merchantUniqueId شناسه منحصر به فرد فروشنده برای تأیید سفارش
  * @param paidAt 
  * @param refundsAt 
  */
@@ -47,7 +47,7 @@ data class MerchantPaidOrderList (
     @Json(name = "merchant_order_id")
     val merchantOrderId: kotlin.String,
 
-    /* شناسه منحصر به فرد برای پذیرنده برای تأیید سفارش */
+    /* شناسه منحصر به فرد فروشنده برای تأیید سفارش */
     @Json(name = "merchant_unique_id")
     val merchantUniqueId: kotlin.String,
 

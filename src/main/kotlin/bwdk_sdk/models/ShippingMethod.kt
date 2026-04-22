@@ -34,19 +34,19 @@ import com.squareup.moshi.JsonClass
  * Serializer for shipping method details.
  *
  * @param id 
- * @param name نام روش/گزینه بسته‌بندی
+ * @param name نام روش ارسال
  * @param getShippingTypeDisplay 
  * @param shippingTypeDisplay 
  * @param deliveryTimeDisplay 
  * @param deliveryTimeRangeDisplay 
  * @param inventoryAddress 
- * @param description شناسه روش ارسال برای استفاده در سفارش
- * @param shippingType شناسه وضعیت ارسال از دیجی اکسپرس  * `1` - سایر * `2` - دیجی اکسپرس
- * @param cost هزینه ارسال برای منطقه اصلی (مثلاً تهران) به تومان
+ * @param description توضیحات روش ارسال و جزئیات تحویل آن
+ * @param shippingType نوع روش ارسال: عادی یا دیجی اکسپرس  * `1` - سایر * `2` - دیجی اکسپرس
+ * @param cost هزینه ارسال برای منطقه اولیه (مثلاً تهران) به تومان
  * @param secondaryCost هزینه ارسال برای مناطق دیگر به تومان
- * @param minimumTimeSending حداقل تعداد روز از تاریخ سفارش تا تحویل
- * @param maximumTimeSending Maximum number of days from order date to delivery
- * @param isPayAtDestination آیا روش ارسال پرداخت در مقصد است
+ * @param minimumTimeSending حداقل تعداد روزها از تاریخ سفارش تا تحویل
+ * @param maximumTimeSending حداکثر تعداد روزها از تاریخ سفارش تا تحویل
+ * @param isPayAtDestination Whether the shipping method is pay at destination
  */
 
 
@@ -55,7 +55,7 @@ data class ShippingMethod (
     @Json(name = "id")
     val id: kotlin.Int,
 
-    /* نام روش/گزینه بسته‌بندی */
+    /* نام روش ارسال */
     @Json(name = "name")
     val name: kotlin.String,
 
@@ -74,15 +74,15 @@ data class ShippingMethod (
     @Json(name = "inventory_address")
     val inventoryAddress: BusinessAddress,
 
-    /* شناسه روش ارسال برای استفاده در سفارش */
+    /* توضیحات روش ارسال و جزئیات تحویل آن */
     @Json(name = "description")
     val description: kotlin.String? = null,
 
-    /* شناسه وضعیت ارسال از دیجی اکسپرس  * `1` - سایر * `2` - دیجی اکسپرس */
+    /* نوع روش ارسال: عادی یا دیجی اکسپرس  * `1` - سایر * `2` - دیجی اکسپرس */
     @Json(name = "shipping_type")
     val shippingType: ShippingTypeEnum? = null,
 
-    /* هزینه ارسال برای منطقه اصلی (مثلاً تهران) به تومان */
+    /* هزینه ارسال برای منطقه اولیه (مثلاً تهران) به تومان */
     @Json(name = "cost")
     val cost: kotlin.Int? = null,
 
@@ -90,15 +90,15 @@ data class ShippingMethod (
     @Json(name = "secondary_cost")
     val secondaryCost: kotlin.Int? = null,
 
-    /* حداقل تعداد روز از تاریخ سفارش تا تحویل */
+    /* حداقل تعداد روزها از تاریخ سفارش تا تحویل */
     @Json(name = "minimum_time_sending")
     val minimumTimeSending: kotlin.Int? = null,
 
-    /* Maximum number of days from order date to delivery */
+    /* حداکثر تعداد روزها از تاریخ سفارش تا تحویل */
     @Json(name = "maximum_time_sending")
     val maximumTimeSending: kotlin.Int? = null,
 
-    /* آیا روش ارسال پرداخت در مقصد است */
+    /* Whether the shipping method is pay at destination */
     @Json(name = "is_pay_at_destination")
     val isPayAtDestination: kotlin.Boolean? = null
 

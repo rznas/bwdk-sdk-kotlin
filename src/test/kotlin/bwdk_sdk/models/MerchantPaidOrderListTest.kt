@@ -45,7 +45,7 @@ class MerchantPaidOrderListTest : ShouldSpec() {
             //modelInstance.merchantOrderId shouldBe ("TODO")
         }
 
-        // to test the property `merchantUniqueId` - شناسه منحصر به فرد برای پذیرنده برای تأیید سفارش
+        // to test the property `merchantUniqueId` - شناسه منحصر به فرد فروشنده برای تأیید سفارش
         should("test merchantUniqueId") {
             // uncomment below to test the property
             //modelInstance.merchantUniqueId shouldBe ("TODO")

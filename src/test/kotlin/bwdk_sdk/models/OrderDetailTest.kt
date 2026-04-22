@@ -82,7 +82,7 @@ class OrderDetailTest : ShouldSpec() {
             //modelInstance.statusDisplay shouldBe ("TODO")
         }
 
-        // to test the property `mainAmount` - مجموع قیمت‌های اولیه تمام کالاها بدون تخفیف (به تومان)
+        // to test the property `mainAmount` - مجموع قیمت اولیه تمام کالاهای سفارش بدون تخفیف (به تومان)
         should("test mainAmount") {
             // uncomment below to test the property
             //modelInstance.mainAmount shouldBe ("TODO")
@@ -100,7 +100,7 @@ class OrderDetailTest : ShouldSpec() {
             //modelInstance.totalPaidAmount shouldBe ("TODO")
         }
 
-        // to test the property `discountAmount` - کل تخفیف اعمال شده بر سفارش (به تومان)
+        // to test the property `discountAmount` - مبلغ کل تخفیف اعمال شده بر سفارش (به تومان)
         should("test discountAmount") {
             // uncomment below to test the property
             //modelInstance.discountAmount shouldBe ("TODO")
@@ -232,13 +232,13 @@ class OrderDetailTest : ShouldSpec() {
             //modelInstance.payment shouldBe ("TODO")
         }
 
-        // to test the property `preparationTime` - زمان آمادهسازی سفارش (به روز)
+        // to test the property `preparationTime` - Preparation time for the order (in days)
         should("test preparationTime") {
             // uncomment below to test the property
             //modelInstance.preparationTime shouldBe ("TODO")
         }
 
-        // to test the property `weight` - وزن کل سفارش (بر حسب گرم)
+        // to test the property `weight` - Total weight of the order (in grams)
         should("test weight") {
             // uncomment below to test the property
             //modelInstance.weight shouldBe ("TODO")
@@ -250,7 +250,7 @@ class OrderDetailTest : ShouldSpec() {
             //modelInstance.selectedShippingData shouldBe ("TODO")
         }
 
-        // to test the property `referenceCode` - کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX)
+        // to test the property `referenceCode` - کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX)
         should("test referenceCode") {
             // uncomment below to test the property
             //modelInstance.referenceCode shouldBe ("TODO")
@@ -268,13 +268,13 @@ class OrderDetailTest : ShouldSpec() {
             //modelInstance.promotionData shouldBe ("TODO")
         }
 
-        // to test the property `digipayMarkupAmount` - مبلغ نشانه‌گذاری برای سفارش (به تومان)
+        // to test the property `digipayMarkupAmount` - Markup amount for the order (in Tomans)
         should("test digipayMarkupAmount") {
             // uncomment below to test the property
             //modelInstance.digipayMarkupAmount shouldBe ("TODO")
         }
 
-        // to test the property `markupCommissionPercentage` - درصد کمیسیون نشانه‌گذاری برای سفارش (به درصد)
+        // to test the property `markupCommissionPercentage` - Markup commission percentage for the order (in percent)
         should("test markupCommissionPercentage") {
             // uncomment below to test the property
             //modelInstance.markupCommissionPercentage shouldBe ("TODO")

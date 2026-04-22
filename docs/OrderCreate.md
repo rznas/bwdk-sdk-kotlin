@@ -10,7 +10,7 @@
 | **destinationAddress** | [**kotlin.Any**](.md) |  |  [readonly] |
 | **items** | [**kotlin.collections.List&lt;OrderItemCreate&gt;**](OrderItemCreate.md) |  |  |
 | **user** | **kotlin.Int** |  |  [readonly] |
-| **referenceCode** | **kotlin.String** | کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX) |  [readonly] |
+| **referenceCode** | **kotlin.String** | کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX) |  [readonly] |
 | **mainAmount** | **kotlin.Int** | مجموع قیمت‌های اولیه تمام کالاها بدون تخفیف (به تومان) |  [optional] |
 | **finalAmount** | **kotlin.Int** | مبلغ نهایی: مبلغ_اصلی - مبلغ_تخفیف + مبلغ_مالیات (به تومان) |  [optional] |
 | **totalPaidAmount** | **kotlin.Int** | مبلغ کل پرداخت شده توسط کاربر: مبلغ_نهایی + هزینه_ارسال (به تومان) |  [optional] |
@@ -21,8 +21,8 @@
 | **merchant** | **kotlin.Int** | مقدار توسط سیستم جایگذاری می شود |  [optional] |
 | **sourceAddress** | [**kotlin.Any**](.md) | مقدار توسط سیستم جایگذاری می شود |  [optional] |
 | **reservationExpiredAt** | **kotlin.Int** | مهلت پرداخت (به عنوان Unix timestamp) قبل از اتمام سفارش |  [optional] |
-| **preparationTime** | **kotlin.Int** | زمان آمادهسازی سفارش (به روز) |  [optional] |
-| **weight** | **kotlin.Double** | وزن کل سفارش (بر حسب گرم) |  [optional] |
+| **preparationTime** | **kotlin.Int** | Preparation time for the order (in days) |  [optional] |
+| **weight** | **kotlin.Double** | Total Weight of the order (in grams) |  [optional] |
 
 
 

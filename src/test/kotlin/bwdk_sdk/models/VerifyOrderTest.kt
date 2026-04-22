@@ -33,7 +33,7 @@ class VerifyOrderTest : ShouldSpec() {
         // uncomment below to create an instance of VerifyOrder
         //val modelInstance = VerifyOrder()
 
-        // to test the property `merchantUniqueId` - شناسه منحصر به فرد ارسال شده هنگام ایجاد سفارش برای تأیید اصالت سفارش
+        // to test the property `merchantUniqueId` - شناسه منحصر به فرد ارسال شده هنگام ساخت سفارش برای تأیید اصالت سفارش
         should("test merchantUniqueId") {
             // uncomment below to test the property
             //modelInstance.merchantUniqueId shouldBe ("TODO")

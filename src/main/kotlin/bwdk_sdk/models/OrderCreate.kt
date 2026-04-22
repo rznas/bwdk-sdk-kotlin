@@ -37,7 +37,7 @@ import com.squareup.moshi.JsonClass
  * @param destinationAddress 
  * @param items 
  * @param user 
- * @param referenceCode کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX)
+ * @param referenceCode کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX)
  * @param mainAmount مجموع قیمت‌های اولیه تمام کالاها بدون تخفیف (به تومان)
  * @param finalAmount مبلغ نهایی: مبلغ_اصلی - مبلغ_تخفیف + مبلغ_مالیات (به تومان)
  * @param totalPaidAmount مبلغ کل پرداخت شده توسط کاربر: مبلغ_نهایی + هزینه_ارسال (به تومان)
@@ -48,8 +48,8 @@ import com.squareup.moshi.JsonClass
  * @param merchant مقدار توسط سیستم جایگذاری می شود
  * @param sourceAddress مقدار توسط سیستم جایگذاری می شود
  * @param reservationExpiredAt مهلت پرداخت (به عنوان Unix timestamp) قبل از اتمام سفارش
- * @param preparationTime زمان آمادهسازی سفارش (به روز)
- * @param weight وزن کل سفارش (بر حسب گرم)
+ * @param preparationTime Preparation time for the order (in days)
+ * @param weight Total Weight of the order (in grams)
  */
 
 
@@ -76,7 +76,7 @@ data class OrderCreate (
     @Json(name = "user")
     val user: kotlin.Int?,
 
-    /* کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX) */
+    /* کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX) */
     @Json(name = "reference_code")
     val referenceCode: kotlin.String,
 
@@ -120,11 +120,11 @@ data class OrderCreate (
     @Json(name = "reservation_expired_at")
     val reservationExpiredAt: kotlin.Int? = null,
 
-    /* زمان آمادهسازی سفارش (به روز) */
+    /* Preparation time for the order (in days) */
     @Json(name = "preparation_time")
     val preparationTime: kotlin.Int? = 2,
 
-    /* وزن کل سفارش (بر حسب گرم) */
+    /* Total Weight of the order (in grams) */
     @Json(name = "weight")
     val weight: kotlin.Double? = null
 

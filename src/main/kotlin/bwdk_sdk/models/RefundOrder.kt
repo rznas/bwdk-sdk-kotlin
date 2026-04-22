@@ -30,13 +30,13 @@ import com.squareup.moshi.JsonClass
 /**
  * Serializer for refunding an order.
  *
- * @param reason دلیل اختیاری برای بازگرداندن وجه
+ * @param reason Optional reason for the refund
  */
 
 
 data class RefundOrder (
 
-    /* دلیل اختیاری برای بازگرداندن وجه */
+    /* Optional reason for the refund */
     @Json(name = "reason")
     val reason: kotlin.String? = null
 

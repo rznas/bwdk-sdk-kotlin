@@ -33,7 +33,7 @@ class ReviveShipmentTest : ShouldSpec() {
         // uncomment below to create an instance of ReviveShipment
         //val modelInstance = ReviveShipment()
 
-        // to test the property `preparationTime` - زمان آمادهسازی سفارش (به روز)
+        // to test the property `preparationTime` - The preparation time for the order in days.
         should("test preparationTime") {
             // uncomment below to test the property
             //modelInstance.preparationTime shouldBe ("TODO")

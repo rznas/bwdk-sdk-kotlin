@@ -11,10 +11,10 @@
 | **merchantOrderId** | **kotlin.String** | شناسه منحصر به فرد سفارش در سیستم فروشنده |  [readonly] |
 | **status** | [**OrderStatusEnum**](OrderStatusEnum.md) |  |  [readonly] |
 | **statusDisplay** | **kotlin.String** |  |  [readonly] |
-| **mainAmount** | **kotlin.Int** | مجموع قیمت‌های اولیه تمام کالاها بدون تخفیف (به تومان) |  [readonly] |
+| **mainAmount** | **kotlin.Int** | مجموع قیمت اولیه تمام کالاهای سفارش بدون تخفیف (به تومان) |  [readonly] |
 | **finalAmount** | **kotlin.Int** | قیمت نهایی قابل پرداخت توسط مشتری: مبلغ_اصلی - مبلغ_تخفیف + مبلغ_مالیات (به تومان) |  [readonly] |
 | **totalPaidAmount** | **kotlin.Int** | مبلغ کل پرداخت شده توسط کاربر: مبلغ_نهایی + هزینه_ارسال (به تومان) |  [readonly] |
-| **discountAmount** | **kotlin.Int** | کل تخفیف اعمال شده بر سفارش (به تومان) |  [readonly] |
+| **discountAmount** | **kotlin.Int** | مبلغ کل تخفیف اعمال شده بر سفارش (به تومان) |  [readonly] |
 | **taxAmount** | **kotlin.Int** | مبلغ کل مالیات برای سفارش (به تومان) |  [readonly] |
 | **shippingAmount** | **kotlin.Int** | هزینه ارسال برای سفارش (به تومان) |  [readonly] |
 | **loyaltyAmount** | **kotlin.Int** | مقدار تخفیف از برنامه باشگاه مشتریان/پاداش (به تومان) |  [readonly] |
@@ -36,14 +36,14 @@
 | **isPaid** | **kotlin.Boolean** |  |  [readonly] |
 | **user** | [**OrderUser**](OrderUser.md) |  |  [readonly] |
 | **payment** | [**PaymentOrder**](PaymentOrder.md) |  |  [readonly] |
-| **preparationTime** | **kotlin.Int** | زمان آمادهسازی سفارش (به روز) |  [readonly] |
-| **weight** | **kotlin.Double** | وزن کل سفارش (بر حسب گرم) |  [readonly] |
+| **preparationTime** | **kotlin.Int** | Preparation time for the order (in days) |  [readonly] |
+| **weight** | **kotlin.Double** | Total weight of the order (in grams) |  [readonly] |
 | **selectedShippingData** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [readonly] |
-| **referenceCode** | **kotlin.String** | کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX) |  [readonly] |
+| **referenceCode** | **kotlin.String** | کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX) |  [readonly] |
 | **promotionDiscountAmount** | **kotlin.Double** |  |  [readonly] |
 | **promotionData** | [**kotlin.collections.Map&lt;kotlin.String, kotlin.Any&gt;**](kotlin.Any.md) |  |  [readonly] |
-| **digipayMarkupAmount** | **kotlin.Int** | مبلغ نشانه‌گذاری برای سفارش (به تومان) |  [readonly] |
-| **markupCommissionPercentage** | **kotlin.Int** | درصد کمیسیون نشانه‌گذاری برای سفارش (به درصد) |  [readonly] |
+| **digipayMarkupAmount** | **kotlin.Int** | Markup amount for the order (in Tomans) |  [readonly] |
+| **markupCommissionPercentage** | **kotlin.Int** | Markup commission percentage for the order (in percent) |  [readonly] |
 | **previousStatus** | [**OrderStatusEnum**](OrderStatusEnum.md) |  |  [readonly] |
 | **previousStatusDisplay** | **kotlin.String** |  |  [readonly] |
 

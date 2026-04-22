@@ -42,7 +42,7 @@ class ShippingMethodTest : ShouldSpec() {
             //modelInstance.id shouldBe ("TODO")
         }
 
-        // to test the property `name` - نام روش/گزینه بسته‌بندی
+        // to test the property `name` - نام روش ارسال
         should("test name") {
             // uncomment below to test the property
             //modelInstance.name shouldBe ("TODO")
@@ -78,19 +78,19 @@ class ShippingMethodTest : ShouldSpec() {
             //modelInstance.inventoryAddress shouldBe ("TODO")
         }
 
-        // to test the property `description` - شناسه روش ارسال برای استفاده در سفارش
+        // to test the property `description` - توضیحات روش ارسال و جزئیات تحویل آن
         should("test description") {
             // uncomment below to test the property
             //modelInstance.description shouldBe ("TODO")
         }
 
-        // to test the property `shippingType` - شناسه وضعیت ارسال از دیجی اکسپرس  * `1` - سایر * `2` - دیجی اکسپرس
+        // to test the property `shippingType` - نوع روش ارسال: عادی یا دیجی اکسپرس  * `1` - سایر * `2` - دیجی اکسپرس
         should("test shippingType") {
             // uncomment below to test the property
             //modelInstance.shippingType shouldBe ("TODO")
         }
 
-        // to test the property `cost` - هزینه ارسال برای منطقه اصلی (مثلاً تهران) به تومان
+        // to test the property `cost` - هزینه ارسال برای منطقه اولیه (مثلاً تهران) به تومان
         should("test cost") {
             // uncomment below to test the property
             //modelInstance.cost shouldBe ("TODO")
@@ -102,19 +102,19 @@ class ShippingMethodTest : ShouldSpec() {
             //modelInstance.secondaryCost shouldBe ("TODO")
         }
 
-        // to test the property `minimumTimeSending` - حداقل تعداد روز از تاریخ سفارش تا تحویل
+        // to test the property `minimumTimeSending` - حداقل تعداد روزها از تاریخ سفارش تا تحویل
         should("test minimumTimeSending") {
             // uncomment below to test the property
             //modelInstance.minimumTimeSending shouldBe ("TODO")
         }
 
-        // to test the property `maximumTimeSending` - Maximum number of days from order date to delivery
+        // to test the property `maximumTimeSending` - حداکثر تعداد روزها از تاریخ سفارش تا تحویل
         should("test maximumTimeSending") {
             // uncomment below to test the property
             //modelInstance.maximumTimeSending shouldBe ("TODO")
         }
 
-        // to test the property `isPayAtDestination` - آیا روش ارسال پرداخت در مقصد است
+        // to test the property `isPayAtDestination` - Whether the shipping method is pay at destination
         should("test isPayAtDestination") {
             // uncomment below to test the property
             //modelInstance.isPayAtDestination shouldBe ("TODO")

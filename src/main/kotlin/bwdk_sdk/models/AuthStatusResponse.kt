@@ -30,13 +30,13 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param isAuthenticated وضعیت لاگین بودن
+ * @param isAuthenticated Authentication status
  */
 
 
 data class AuthStatusResponse (
 
-    /* وضعیت لاگین بودن */
+    /* Authentication status */
     @Json(name = "is_authenticated")
     val isAuthenticated: kotlin.Boolean
 

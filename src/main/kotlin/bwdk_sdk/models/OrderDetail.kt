@@ -44,10 +44,10 @@ import com.squareup.moshi.JsonClass
  * @param merchantOrderId شناسه منحصر به فرد سفارش در سیستم فروشنده
  * @param status 
  * @param statusDisplay 
- * @param mainAmount مجموع قیمت‌های اولیه تمام کالاها بدون تخفیف (به تومان)
+ * @param mainAmount مجموع قیمت اولیه تمام کالاهای سفارش بدون تخفیف (به تومان)
  * @param finalAmount قیمت نهایی قابل پرداخت توسط مشتری: مبلغ_اصلی - مبلغ_تخفیف + مبلغ_مالیات (به تومان)
  * @param totalPaidAmount مبلغ کل پرداخت شده توسط کاربر: مبلغ_نهایی + هزینه_ارسال (به تومان)
- * @param discountAmount کل تخفیف اعمال شده بر سفارش (به تومان)
+ * @param discountAmount مبلغ کل تخفیف اعمال شده بر سفارش (به تومان)
  * @param taxAmount مبلغ کل مالیات برای سفارش (به تومان)
  * @param shippingAmount هزینه ارسال برای سفارش (به تومان)
  * @param loyaltyAmount مقدار تخفیف از برنامه باشگاه مشتریان/پاداش (به تومان)
@@ -69,14 +69,14 @@ import com.squareup.moshi.JsonClass
  * @param isPaid 
  * @param user 
  * @param payment 
- * @param preparationTime زمان آمادهسازی سفارش (به روز)
- * @param weight وزن کل سفارش (بر حسب گرم)
+ * @param preparationTime Preparation time for the order (in days)
+ * @param weight Total weight of the order (in grams)
  * @param selectedShippingData 
- * @param referenceCode کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX)
+ * @param referenceCode کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX)
  * @param promotionDiscountAmount 
  * @param promotionData 
- * @param digipayMarkupAmount مبلغ نشانه‌گذاری برای سفارش (به تومان)
- * @param markupCommissionPercentage درصد کمیسیون نشانه‌گذاری برای سفارش (به درصد)
+ * @param digipayMarkupAmount Markup amount for the order (in Tomans)
+ * @param markupCommissionPercentage Markup commission percentage for the order (in percent)
  * @param previousStatus 
  * @param previousStatusDisplay 
  */
@@ -107,7 +107,7 @@ data class OrderDetail (
     @Json(name = "status_display")
     val statusDisplay: kotlin.String,
 
-    /* مجموع قیمت‌های اولیه تمام کالاها بدون تخفیف (به تومان) */
+    /* مجموع قیمت اولیه تمام کالاهای سفارش بدون تخفیف (به تومان) */
     @Json(name = "main_amount")
     val mainAmount: kotlin.Int,
 
@@ -119,7 +119,7 @@ data class OrderDetail (
     @Json(name = "total_paid_amount")
     val totalPaidAmount: kotlin.Int,
 
-    /* کل تخفیف اعمال شده بر سفارش (به تومان) */
+    /* مبلغ کل تخفیف اعمال شده بر سفارش (به تومان) */
     @Json(name = "discount_amount")
     val discountAmount: kotlin.Int,
 
@@ -191,18 +191,18 @@ data class OrderDetail (
     @Json(name = "payment")
     val payment: PaymentOrder,
 
-    /* زمان آمادهسازی سفارش (به روز) */
+    /* Preparation time for the order (in days) */
     @Json(name = "preparation_time")
     val preparationTime: kotlin.Int,
 
-    /* وزن کل سفارش (بر حسب گرم) */
+    /* Total weight of the order (in grams) */
     @Json(name = "weight")
     val weight: kotlin.Double,
 
     @Json(name = "selected_shipping_data")
     val selectedShippingData: kotlin.collections.Map<kotlin.String, kotlin.Any>,
 
-    /* کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX) */
+    /* کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX) */
     @Json(name = "reference_code")
     val referenceCode: kotlin.String,
 
@@ -212,11 +212,11 @@ data class OrderDetail (
     @Json(name = "promotion_data")
     val promotionData: kotlin.collections.Map<kotlin.String, kotlin.Any>,
 
-    /* مبلغ نشانه‌گذاری برای سفارش (به تومان) */
+    /* Markup amount for the order (in Tomans) */
     @Json(name = "digipay_markup_amount")
     val digipayMarkupAmount: kotlin.Int,
 
-    /* درصد کمیسیون نشانه‌گذاری برای سفارش (به درصد) */
+    /* Markup commission percentage for the order (in percent) */
     @Json(name = "markup_commission_percentage")
     val markupCommissionPercentage: kotlin.Int,
 

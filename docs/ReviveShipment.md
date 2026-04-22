@@ -4,7 +4,7 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **preparationTime** | **kotlin.Int** | زمان آمادهسازی سفارش (به روز) |  [optional] |
+| **preparationTime** | **kotlin.Int** | The preparation time for the order in days. |  [optional] |
 
 
 

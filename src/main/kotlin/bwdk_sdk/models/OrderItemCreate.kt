@@ -39,8 +39,8 @@ import com.squareup.moshi.JsonClass
  * @param discountAmount مبلغ کل تخفیف برای این کالا (به تومان)
  * @param taxAmount مبلغ کل مالیات برای این کالا (به تومان)
  * @param imageLink آدرس تصویر محصول
- * @param preparationTime زمان آمادهسازی کالا (به روز)
- * @param weight وزن کالا (بر حسب گرم)
+ * @param preparationTime Preparation time for the item (in days)
+ * @param weight Weight of the item (in grams)
  */
 
 
@@ -77,11 +77,11 @@ data class OrderItemCreate (
     @Json(name = "image_link")
     val imageLink: java.net.URI? = null,
 
-    /* زمان آمادهسازی کالا (به روز) */
+    /* Preparation time for the item (in days) */
     @Json(name = "preparation_time")
     val preparationTime: kotlin.Int? = 2,
 
-    /* وزن کالا (بر حسب گرم) */
+    /* Weight of the item (in grams) */
     @Json(name = "weight")
     val weight: kotlin.Double? = null
 

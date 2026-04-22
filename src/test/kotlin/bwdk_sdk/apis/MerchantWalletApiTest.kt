@@ -21,22 +21,24 @@
     "unused"
 )
 
-package bwdk_sdk.models
+package bwdk_sdk.apis
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import bwdk_sdk.models.RefundOrder
+import bwdk_sdk.apis.MerchantWalletApi
+import bwdk_sdk.models.WalletBalance
 
-class RefundOrderTest : ShouldSpec() {
+class MerchantWalletApiTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of RefundOrder
-        //val modelInstance = RefundOrder()
+        // uncomment below to create an instance of MerchantWalletApi
+        //val apiInstance = MerchantWalletApi()
 
-        // to test the property `reason` - Optional reason for the refund
-        should("test reason") {
-            // uncomment below to test the property
-            //modelInstance.reason shouldBe ("TODO")
+        // to test walletsApiV1WalletBalanceRetrieve
+        should("test walletsApiV1WalletBalanceRetrieve") {
+            // uncomment below to test walletsApiV1WalletBalanceRetrieve
+            //val result : WalletBalance = apiInstance.walletsApiV1WalletBalanceRetrieve()
+            //result shouldBe ("TODO")
         }
 
     }

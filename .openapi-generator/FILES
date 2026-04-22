@@ -3,7 +3,6 @@ README.md
 build.gradle
 docs/AuthStatusResponse.md
 docs/BusinessAddress.md
-docs/DefaultApi.md
 docs/DeliveryTimeRangeDisplay.md
 docs/ErrorEnum.md
 docs/GatewayTypeEnum.md
@@ -11,7 +10,9 @@ docs/Merchant.md
 docs/MerchantOrderCancelShipmentResponse.md
 docs/MerchantOrderRefundResponse.md
 docs/MerchantOrderReviveShipmentResponse.md
+docs/MerchantOrdersApi.md
 docs/MerchantPaidOrderList.md
+docs/MerchantWalletApi.md
 docs/NullEnum.md
 docs/Option.md
 docs/OrderCreate.md
@@ -19,6 +20,7 @@ docs/OrderCreateResponse.md
 docs/OrderDetail.md
 docs/OrderError.md
 docs/OrderItemCreate.md
+docs/OrderShippingApi.md
 docs/OrderStatusEnum.md
 docs/OrderUser.md
 docs/Packing.md
@@ -27,6 +29,7 @@ docs/PaginatedOrderDetailList.md
 docs/PaymentOrder.md
 docs/RefundOrder.md
 docs/ReviveShipment.md
+docs/SellerProfileManagementApi.md
 docs/ShippingMethod.md
 docs/ShippingTypeEnum.md
 docs/TypeNameEnum.md
@@ -38,7 +41,10 @@ gradle/wrapper/gradle-wrapper.properties
 gradlew
 gradlew.bat
 settings.gradle
-src/main/kotlin/bwdk_sdk/apis/DefaultApi.kt
+src/main/kotlin/bwdk_sdk/apis/MerchantOrdersApi.kt
+src/main/kotlin/bwdk_sdk/apis/MerchantWalletApi.kt
+src/main/kotlin/bwdk_sdk/apis/OrderShippingApi.kt
+src/main/kotlin/bwdk_sdk/apis/SellerProfileManagementApi.kt
 src/main/kotlin/bwdk_sdk/infrastructure/ApiAbstractions.kt
 src/main/kotlin/bwdk_sdk/infrastructure/ApiClient.kt
 src/main/kotlin/bwdk_sdk/infrastructure/ApiResponse.kt
@@ -87,7 +93,10 @@ src/main/kotlin/bwdk_sdk/models/TypeNameEnum.kt
 src/main/kotlin/bwdk_sdk/models/UpdateOrderStatus.kt
 src/main/kotlin/bwdk_sdk/models/VerifyOrder.kt
 src/main/kotlin/bwdk_sdk/models/WalletBalance.kt
-src/test/kotlin/bwdk_sdk/apis/DefaultApiTest.kt
+src/test/kotlin/bwdk_sdk/apis/MerchantOrdersApiTest.kt
+src/test/kotlin/bwdk_sdk/apis/MerchantWalletApiTest.kt
+src/test/kotlin/bwdk_sdk/apis/OrderShippingApiTest.kt
+src/test/kotlin/bwdk_sdk/apis/SellerProfileManagementApiTest.kt
 src/test/kotlin/bwdk_sdk/models/AuthStatusResponseTest.kt
 src/test/kotlin/bwdk_sdk/models/BusinessAddressTest.kt
 src/test/kotlin/bwdk_sdk/models/DeliveryTimeRangeDisplayTest.kt

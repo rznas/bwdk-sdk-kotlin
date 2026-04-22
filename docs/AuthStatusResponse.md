@@ -4,7 +4,7 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **isAuthenticated** | **kotlin.Boolean** | وضعیت لاگین بودن |  |
+| **isAuthenticated** | **kotlin.Boolean** | Authentication status |  |
 
 
 

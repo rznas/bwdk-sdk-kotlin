@@ -26,11 +26,8 @@ package bwdk_sdk.apis
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import bwdk_sdk.apis.DefaultApi
-import bwdk_sdk.models.AuthStatusResponse
-import bwdk_sdk.models.MerchantOrderCancelShipmentResponse
+import bwdk_sdk.apis.MerchantOrdersApi
 import bwdk_sdk.models.MerchantOrderRefundResponse
-import bwdk_sdk.models.MerchantOrderReviveShipmentResponse
 import bwdk_sdk.models.OrderCreate
 import bwdk_sdk.models.OrderCreateResponse
 import bwdk_sdk.models.OrderDetail
@@ -38,45 +35,19 @@ import bwdk_sdk.models.OrderError
 import bwdk_sdk.models.PaginatedMerchantPaidOrderListList
 import bwdk_sdk.models.PaginatedOrderDetailList
 import bwdk_sdk.models.RefundOrder
-import bwdk_sdk.models.ReviveShipment
 import bwdk_sdk.models.UpdateOrderStatus
 import bwdk_sdk.models.VerifyOrder
-import bwdk_sdk.models.WalletBalance
 
-class DefaultApiTest : ShouldSpec() {
+class MerchantOrdersApiTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of DefaultApi
-        //val apiInstance = DefaultApi()
-
-        // to test merchantApiV1AuthStatusRetrieve
-        should("test merchantApiV1AuthStatusRetrieve") {
-            // uncomment below to test merchantApiV1AuthStatusRetrieve
-            //val result : AuthStatusResponse = apiInstance.merchantApiV1AuthStatusRetrieve()
-            //result shouldBe ("TODO")
-        }
+        // uncomment below to create an instance of MerchantOrdersApi
+        //val apiInstance = MerchantOrdersApi()
 
         // to test orderApiV1CreateOrderCreate
         should("test orderApiV1CreateOrderCreate") {
             // uncomment below to test orderApiV1CreateOrderCreate
             //val orderCreate : OrderCreate =  // OrderCreate | 
             //val result : OrderCreateResponse = apiInstance.orderApiV1CreateOrderCreate(orderCreate)
-            //result shouldBe ("TODO")
-        }
-
-        // to test orderApiV1ManagerCancelShipmentCreate
-        should("test orderApiV1ManagerCancelShipmentCreate") {
-            // uncomment below to test orderApiV1ManagerCancelShipmentCreate
-            //val orderUuid : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
-            //val result : MerchantOrderCancelShipmentResponse = apiInstance.orderApiV1ManagerCancelShipmentCreate(orderUuid)
-            //result shouldBe ("TODO")
-        }
-
-        // to test orderApiV1ManagerChangeShippingMethodUpdate
-        should("test orderApiV1ManagerChangeShippingMethodUpdate") {
-            // uncomment below to test orderApiV1ManagerChangeShippingMethodUpdate
-            //val orderUuid : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
-            //val orderDetail : OrderDetail =  // OrderDetail | 
-            //val result : OrderDetail = apiInstance.orderApiV1ManagerChangeShippingMethodUpdate(orderUuid, orderDetail)
             //result shouldBe ("TODO")
         }
 
@@ -93,7 +64,7 @@ class DefaultApiTest : ShouldSpec() {
             //val referenceCode : kotlin.String = referenceCode_example // kotlin.String | 
             //val search : kotlin.String = search_example // kotlin.String | یک عبارت جستجو.
             //val shippingTypes : kotlin.String = shippingTypes_example // kotlin.String | 
-            //val status : kotlin.Int = 56 // kotlin.Int | * `1` - اولیه * `2` - شروع در * `3` - در انتظار * `4` - در انتظار درگاه * `5` - منقضی شده * `6` - لغو شده * `7` - ممنوع شده توسط ما * `8` - ناموفق در پرداخت * `9` - تأیید شده توسط فروشنده * `10` - ناموفق در تأیید توسط فروشنده * `11` - فروشگاه * `12` - لغو شده توسط فروشنده * `13` - درخواست بازگرداندن وجه به مشتری به دلیل درخواست مشتری * `14` - درخواست بازگرداندن وجه به فروشنده پس از ناموفقی در تأیید توسط فروشنده * `15` - درخواست بازگرداندن وجه به مشتری پس از ناموفقی توسط فروشنده * `16` - بازگردانده شده به فروشنده پس از لغو توسط فروشنده * `17` - بازگرداندن وجه تکمیل شد * `18` - زمان مجاز برای منقضی کردن گذشته است * `19` - تحویل نشده * `20` - مرسوله
+            //val status : kotlin.Int = 56 // kotlin.Int | * `1` - اولیه * `2` - شروع شده * `3` - در انتظار * `4` - در انتظار درگاه * `5` - منقضی شده * `6` - لغو شده * `7` - پرداخت‌شده توسط کاربر * `8` - پرداخت موفیت آمیز نبود * `9` - تأیید شده توسط فروشگاه * `10` - تأیید توسط فروشگاه ناموفق بود * `11` - ناموفق از سوی فروشگاه * `12` - لغوشده توسط فروشگاه * `13` - درخواست بازگشت وجه به مشتری به دلیل درخواست مشتری * `14` - درخواست بازگشت وجه به فروشگاه پس از عدم تأیید توسط فروشگاه * `15` - درخواست بازگشت وجه به مشتری پس از ناموفق بودن توسط فروشگاه * `16` - بازپرداخت به فروشگاه پس از لغو توسط فروشگاه * `17` - بازپرداخت تکمیل شد * `18` - زمان انقضا گذشته است * `19` - تحویل شده * `20` - جمع اوری شده و در حال ارسال
             //val statuses : kotlin.String = statuses_example // kotlin.String | 
             //val todayPickup : kotlin.Boolean = true // kotlin.Boolean | 
             //val result : PaginatedOrderDetailList = apiInstance.orderApiV1ManagerList(cities, createdAt, cursor, orderIds, ordering, paymentTypes, provinces, referenceCode, search, shippingTypes, status, statuses, todayPickup)
@@ -113,7 +84,7 @@ class DefaultApiTest : ShouldSpec() {
             //val referenceCode : kotlin.String = referenceCode_example // kotlin.String | 
             //val search : kotlin.String = search_example // kotlin.String | یک عبارت جستجو.
             //val shippingTypes : kotlin.String = shippingTypes_example // kotlin.String | 
-            //val status : kotlin.Int = 56 // kotlin.Int | * `1` - اولیه * `2` - شروع در * `3` - در انتظار * `4` - در انتظار درگاه * `5` - منقضی شده * `6` - لغو شده * `7` - ممنوع شده توسط ما * `8` - ناموفق در پرداخت * `9` - تأیید شده توسط فروشنده * `10` - ناموفق در تأیید توسط فروشنده * `11` - فروشگاه * `12` - لغو شده توسط فروشنده * `13` - درخواست بازگرداندن وجه به مشتری به دلیل درخواست مشتری * `14` - درخواست بازگرداندن وجه به فروشنده پس از ناموفقی در تأیید توسط فروشنده * `15` - درخواست بازگرداندن وجه به مشتری پس از ناموفقی توسط فروشنده * `16` - بازگردانده شده به فروشنده پس از لغو توسط فروشنده * `17` - بازگرداندن وجه تکمیل شد * `18` - زمان مجاز برای منقضی کردن گذشته است * `19` - تحویل نشده * `20` - مرسوله
+            //val status : kotlin.Int = 56 // kotlin.Int | * `1` - اولیه * `2` - شروع شده * `3` - در انتظار * `4` - در انتظار درگاه * `5` - منقضی شده * `6` - لغو شده * `7` - پرداخت‌شده توسط کاربر * `8` - پرداخت موفیت آمیز نبود * `9` - تأیید شده توسط فروشگاه * `10` - تأیید توسط فروشگاه ناموفق بود * `11` - ناموفق از سوی فروشگاه * `12` - لغوشده توسط فروشگاه * `13` - درخواست بازگشت وجه به مشتری به دلیل درخواست مشتری * `14` - درخواست بازگشت وجه به فروشگاه پس از عدم تأیید توسط فروشگاه * `15` - درخواست بازگشت وجه به مشتری پس از ناموفق بودن توسط فروشگاه * `16` - بازپرداخت به فروشگاه پس از لغو توسط فروشگاه * `17` - بازپرداخت تکمیل شد * `18` - زمان انقضا گذشته است * `19` - تحویل شده * `20` - جمع اوری شده و در حال ارسال
             //val statuses : kotlin.String = statuses_example // kotlin.String | 
             //val todayPickup : kotlin.Boolean = true // kotlin.Boolean | 
             //val result : PaginatedMerchantPaidOrderListList = apiInstance.orderApiV1ManagerPaidList(cities, createdAt, cursor, orderIds, ordering, paymentTypes, provinces, referenceCode, search, shippingTypes, status, statuses, todayPickup)
@@ -137,15 +108,6 @@ class DefaultApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test orderApiV1ManagerReviveShipmentCreate
-        should("test orderApiV1ManagerReviveShipmentCreate") {
-            // uncomment below to test orderApiV1ManagerReviveShipmentCreate
-            //val orderUuid : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
-            //val reviveShipment : ReviveShipment =  // ReviveShipment | 
-            //val result : MerchantOrderReviveShipmentResponse = apiInstance.orderApiV1ManagerReviveShipmentCreate(orderUuid, reviveShipment)
-            //result shouldBe ("TODO")
-        }
-
         // to test orderApiV1ManagerUpdateStatusUpdate
         should("test orderApiV1ManagerUpdateStatusUpdate") {
             // uncomment below to test orderApiV1ManagerUpdateStatusUpdate
@@ -161,13 +123,6 @@ class DefaultApiTest : ShouldSpec() {
             //val orderUuid : java.util.UUID = 38400000-8cf0-11bd-b23e-10b96e4ef00d // java.util.UUID | 
             //val verifyOrder : VerifyOrder =  // VerifyOrder | 
             //val result : OrderDetail = apiInstance.orderApiV1ManagerVerifyCreate(orderUuid, verifyOrder)
-            //result shouldBe ("TODO")
-        }
-
-        // to test walletsApiV1WalletBalanceRetrieve
-        should("test walletsApiV1WalletBalanceRetrieve") {
-            // uncomment below to test walletsApiV1WalletBalanceRetrieve
-            //val result : WalletBalance = apiInstance.walletsApiV1WalletBalanceRetrieve()
             //result shouldBe ("TODO")
         }
 

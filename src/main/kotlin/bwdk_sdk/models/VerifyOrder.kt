@@ -30,13 +30,13 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param merchantUniqueId شناسه منحصر به فرد ارسال شده هنگام ایجاد سفارش برای تأیید اصالت سفارش
+ * @param merchantUniqueId شناسه منحصر به فرد ارسال شده هنگام ساخت سفارش برای تأیید اصالت سفارش
  */
 
 
 data class VerifyOrder (
 
-    /* شناسه منحصر به فرد ارسال شده هنگام ایجاد سفارش برای تأیید اصالت سفارش */
+    /* شناسه منحصر به فرد ارسال شده هنگام ساخت سفارش برای تأیید اصالت سفارش */
     @Json(name = "merchant_unique_id")
     val merchantUniqueId: kotlin.String
 

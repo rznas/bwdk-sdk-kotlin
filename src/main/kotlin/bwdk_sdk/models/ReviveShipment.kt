@@ -30,13 +30,13 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param preparationTime زمان آمادهسازی سفارش (به روز)
+ * @param preparationTime The preparation time for the order in days.
  */
 
 
 data class ReviveShipment (
 
-    /* زمان آمادهسازی سفارش (به روز) */
+    /* The preparation time for the order in days. */
     @Json(name = "preparation_time")
     val preparationTime: kotlin.Int? = null
 

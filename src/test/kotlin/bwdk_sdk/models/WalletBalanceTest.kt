@@ -33,13 +33,13 @@ class WalletBalanceTest : ShouldSpec() {
         // uncomment below to create an instance of WalletBalance
         //val modelInstance = WalletBalance()
 
-        // to test the property `negativeSettlementDeadline` - مهلت تسویه تراز منفی
+        // to test the property `negativeSettlementDeadline` - Deadline for settling negative balance
         should("test negativeSettlementDeadline") {
             // uncomment below to test the property
             //modelInstance.negativeSettlementDeadline shouldBe ("TODO")
         }
 
-        // to test the property `amount` - موجودی کیف پول فعلی (برحسب تومان)
+        // to test the property `amount` - Current wallet balance in Tomans
         should("test amount") {
             // uncomment below to test the property
             //modelInstance.amount shouldBe ("TODO")

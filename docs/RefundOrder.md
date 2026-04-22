@@ -4,7 +4,7 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **reason** | **kotlin.String** | دلیل اختیاری برای بازگرداندن وجه |  [optional] |
+| **reason** | **kotlin.String** | Optional reason for the refund |  [optional] |
 
 
 

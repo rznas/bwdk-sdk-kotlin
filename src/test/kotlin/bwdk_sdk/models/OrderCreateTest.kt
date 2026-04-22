@@ -70,7 +70,7 @@ class OrderCreateTest : ShouldSpec() {
             //modelInstance.user shouldBe ("TODO")
         }
 
-        // to test the property `referenceCode` - کد مرجع منحصر به فرد برای پیگیری سفارش مشتری (فرمت: BD-XXXXXXXX)
+        // to test the property `referenceCode` - کد مرجع یکتا برای پیگیری سفارش مشتری (قالب: BD-XXXXXXXX)
         should("test referenceCode") {
             // uncomment below to test the property
             //modelInstance.referenceCode shouldBe ("TODO")
@@ -136,13 +136,13 @@ class OrderCreateTest : ShouldSpec() {
             //modelInstance.reservationExpiredAt shouldBe ("TODO")
         }
 
-        // to test the property `preparationTime` - زمان آمادهسازی سفارش (به روز)
+        // to test the property `preparationTime` - Preparation time for the order (in days)
         should("test preparationTime") {
             // uncomment below to test the property
             //modelInstance.preparationTime shouldBe ("TODO")
         }
 
-        // to test the property `weight` - وزن کل سفارش (بر حسب گرم)
+        // to test the property `weight` - Total Weight of the order (in grams)
         should("test weight") {
             // uncomment below to test the property
             //modelInstance.weight shouldBe ("TODO")

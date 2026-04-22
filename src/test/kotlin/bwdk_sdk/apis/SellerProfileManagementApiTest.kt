@@ -21,22 +21,24 @@
     "unused"
 )
 
-package bwdk_sdk.models
+package bwdk_sdk.apis
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
+import bwdk_sdk.apis.SellerProfileManagementApi
 import bwdk_sdk.models.AuthStatusResponse
 
-class AuthStatusResponseTest : ShouldSpec() {
+class SellerProfileManagementApiTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of AuthStatusResponse
-        //val modelInstance = AuthStatusResponse()
+        // uncomment below to create an instance of SellerProfileManagementApi
+        //val apiInstance = SellerProfileManagementApi()
 
-        // to test the property `isAuthenticated` - Authentication status
-        should("test isAuthenticated") {
-            // uncomment below to test the property
-            //modelInstance.isAuthenticated shouldBe ("TODO")
+        // to test merchantApiV1AuthStatusRetrieve
+        should("test merchantApiV1AuthStatusRetrieve") {
+            // uncomment below to test merchantApiV1AuthStatusRetrieve
+            //val result : AuthStatusResponse = apiInstance.merchantApiV1AuthStatusRetrieve()
+            //result shouldBe ("TODO")
         }
 
     }

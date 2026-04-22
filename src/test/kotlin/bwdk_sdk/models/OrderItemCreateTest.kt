@@ -82,13 +82,13 @@ class OrderItemCreateTest : ShouldSpec() {
             //modelInstance.imageLink shouldBe ("TODO")
         }
 
-        // to test the property `preparationTime` - زمان آمادهسازی کالا (به روز)
+        // to test the property `preparationTime` - Preparation time for the item (in days)
         should("test preparationTime") {
             // uncomment below to test the property
             //modelInstance.preparationTime shouldBe ("TODO")
         }
 
-        // to test the property `weight` - وزن کالا (بر حسب گرم)
+        // to test the property `weight` - Weight of the item (in grams)
         should("test weight") {
             // uncomment below to test the property
             //modelInstance.weight shouldBe ("TODO")

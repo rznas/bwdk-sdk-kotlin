@@ -30,18 +30,18 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param negativeSettlementDeadline مهلت تسویه تراز منفی
- * @param amount موجودی کیف پول فعلی (برحسب تومان)
+ * @param negativeSettlementDeadline Deadline for settling negative balance
+ * @param amount Current wallet balance in Tomans
  */
 
 
 data class WalletBalance (
 
-    /* مهلت تسویه تراز منفی */
+    /* Deadline for settling negative balance */
     @Json(name = "negative_settlement_deadline")
     val negativeSettlementDeadline: kotlin.String?,
 
-    /* موجودی کیف پول فعلی (برحسب تومان) */
+    /* Current wallet balance in Tomans */
     @Json(name = "amount")
     val amount: kotlin.Int? = null
 
